@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.examen.adaptadores.MovieRecyclerView;
 import com.example.examen.adaptadores.OnMovieListener;
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements OnMovieListener {
 
     @Override
     public void onMovieClick(int position) {
+        Toast.makeText(this, "posicion "+position, Toast.LENGTH_LONG).show();
 
     }
 
