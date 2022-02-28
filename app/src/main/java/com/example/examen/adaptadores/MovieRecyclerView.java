@@ -16,7 +16,7 @@ import java.util.List;
 public class MovieRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
    private List<MovieModel> mMovies;
-    private OnMovieListener onMovieListener;
+    private final OnMovieListener onMovieListener;
 
 
     public MovieRecyclerView(OnMovieListener onMovieListener) {
@@ -37,7 +37,7 @@ public class MovieRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         ((MovieViewHolder)holder).title.setText((mMovies.get(position).getTitle()));
         ((MovieViewHolder)holder).release_date.setText((mMovies.get(position).getRelease_date()));
-        ((MovieViewHolder)holder).duration.setText((String.valueOf(mMovies.get(position).getRuntime())));
+        ((MovieViewHolder)holder).duration.setText((String.valueOf(mMovies.get(position).getMovie_id())));
         ((MovieViewHolder)holder).ratingBar.setRating((mMovies.get(position).getVote_average())/2);
 
 
