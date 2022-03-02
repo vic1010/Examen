@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navegacion"
+    app:startDestination="@id/inicio">
+
+
+    <fragment
+        android:id="@+id/inicio"
+        android:label="Inicio"
+        tools:layout="@layout/inicio">
+
+        <action
+            android:id="@+id/inicio_a_pelicula"
+            app:destination="@+id/layout_pelicula" />
+
+    </fragment>
+
+    <fragment android:id="@+id/layout_pelicula"
+        android:name="com.example.examen.MainActivity"
+        android:label="recycler"
+        tools:layout="@layout/activity_main">
+
+        <action
+            android:id="@+id/pelicula_ainicio"
+            app:destination="@+id/inicio"
+
+            />
+
+    </fragment>
+
+
+</navigation>
