@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.examen.adaptadores.MovieRecyclerView;
 import com.example.examen.adaptadores.OnMovieListener;
 import com.example.examen.consumo.MovieModel;
+import com.example.examen.fragments.pruebaMapa;
 import com.example.examen.modelos.MovieListViewModel;
 
 import java.util.List;
@@ -91,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements OnMovieListener {
     public static class Inicio extends AppCompatActivity {
 
 
-        Button btn1;
+        Button btn1, btn2;
 
 
         @Override
@@ -100,6 +101,8 @@ public class MainActivity extends AppCompatActivity implements OnMovieListener {
             setContentView(R.layout.inicio);
 
             btn1 = findViewById(R.id.button33);
+            btn2 = findViewById(R.id.button_mapa);
+
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -107,6 +110,15 @@ public class MainActivity extends AppCompatActivity implements OnMovieListener {
                     startActivity(intent);
                 }
             });
+
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent2 = new Intent(Inicio.this, pruebaMapa.class);
+                    startActivity(intent2);
+                }
+            });
+
 
         }
     }
