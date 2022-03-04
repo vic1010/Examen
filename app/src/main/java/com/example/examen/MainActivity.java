@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -92,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements OnMovieListener {
     public static class Inicio extends AppCompatActivity {
 
 
-        Button btn1, btn2;
+        Button btn1, btn2, btn3;
 
 
         @Override
@@ -102,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements OnMovieListener {
 
             btn1 = findViewById(R.id.button33);
             btn2 = findViewById(R.id.button_mapa);
+            btn3 = findViewById(R.id.button_api);
 
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -116,6 +116,23 @@ public class MainActivity extends AppCompatActivity implements OnMovieListener {
                 public void onClick(View view) {
                     Intent intent2 = new Intent(Inicio.this, pruebaMapa.class);
                     startActivity(intent2);
+                }
+            });
+
+            btn3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                //    FragmentManager fragmentManager = getSupportFragmentManager();
+                //    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                //    Maps mp = new Maps();
+                //   fragmentTransaction.replace(R.id.mappppps,mp);
+                //    fragmentTransaction.addToBackStack(null);
+
+               //     fragmentTransaction.commit();
+
+                    Intent intent3 = new Intent(Inicio.this, MapsActivity.class);
+                    startActivity(intent3);
                 }
             });
 
