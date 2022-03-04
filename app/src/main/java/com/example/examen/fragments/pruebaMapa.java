@@ -16,11 +16,17 @@ import com.example.examen.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class pruebaMapa extends AppCompatActivity {
 
     private FusedLocationProviderClient fusedLocationClient;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +34,8 @@ public class pruebaMapa extends AppCompatActivity {
         setContentView(R.layout.lati_longi); //cambiar
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-        System.out.println("entre a clase map");
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
 
         subirLatLongFirebase();
     }
@@ -53,6 +60,14 @@ public class pruebaMapa extends AppCompatActivity {
 
                             Log.e("latitud:",+location.getLatitude()+" longitud: "+location.getLongitude());
                             System.out.println("latitud:"+location.getLatitude()+" longitud: "+location.getLongitude());
+
+                            Map<String, Object> latiLong = new HashMap<>();
+                            latiLong.put("latitud ", location.getLatitude());
+                            latiLong.put("longitud ", location.getLongitude());
+
+
+                            databaseReference.child("usuarios").push().setValue(latiLong);
+
 
                             // Logic to handle location object
                         }else{
