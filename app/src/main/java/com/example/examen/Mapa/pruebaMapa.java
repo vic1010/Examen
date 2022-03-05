@@ -1,17 +1,14 @@
-package com.example.examen.fragments;
+package com.example.examen.Mapa;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import com.example.examen.MainActivity;
 import com.example.examen.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -62,8 +59,8 @@ public class pruebaMapa extends AppCompatActivity {
                             System.out.println("latitud:"+location.getLatitude()+" longitud: "+location.getLongitude());
 
                             Map<String, Object> latiLong = new HashMap<>();
-                            latiLong.put("latitud ", location.getLatitude());
-                            latiLong.put("longitud ", location.getLongitude());
+                            latiLong.put("latitud", location.getLatitude());
+                            latiLong.put("longitud", location.getLongitude());
 
 
                             databaseReference.child("usuarios").push().setValue(latiLong);

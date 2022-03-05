@@ -13,10 +13,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.examen.Mapa.MapsActivity;
 import com.example.examen.adaptadores.MovieRecyclerView;
 import com.example.examen.adaptadores.OnMovieListener;
 import com.example.examen.consumo.MovieModel;
-import com.example.examen.fragments.pruebaMapa;
+import com.example.examen.Mapa.pruebaMapa;
 import com.example.examen.modelos.MovieListViewModel;
 
 import java.util.List;

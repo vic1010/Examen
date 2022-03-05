@@ -34,7 +34,7 @@
             android:value="AIzaSyAL1TzPPW_jDO2oO-R8uEbeQ_GL88z8ApQ" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".Mapa.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
         <activity android:name=".MainActivity$Inicio">
             <intent-filter>
@@ -44,7 +44,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".fragments.pruebaMapa" />
+        <activity android:name=".Mapa.pruebaMapa" />
 
     </application>
 
