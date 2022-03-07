@@ -12,6 +12,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -71,6 +72,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     Double longitud = dl.getLongitud();
                     MarkerOptions markerOptions = new MarkerOptions();
                     markerOptions.position(new LatLng(latitud, longitud));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitud, longitud), 16));
+                    markerOptions.title("ubicación: "+latitud+ ", "+longitud);
+
+
+                    mMap.getFocusedBuilding();
+                    mMap.getMinZoomLevel();
+                   // mMap.moveCamera();
+
+
 
                     tmpRealTimeMarker.add(mMap.addMarker(markerOptions));
                     System.out.println("coodenadas:                                     "+latitud+"  "+longitud);

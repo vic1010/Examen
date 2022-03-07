@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.examen.Imagenes.ActivityImagenes;
 import com.example.examen.Mapa.MapsActivity;
 import com.example.examen.adaptadores.MovieRecyclerView;
 import com.example.examen.adaptadores.OnMovieListener;
@@ -115,7 +116,10 @@ public class MainActivity extends AppCompatActivity implements OnMovieListener {
             btn2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent2 = new Intent(Inicio.this, pruebaMapa.class);
+         //           Intent intent2 = new Intent(Inicio.this, pruebaMapa.class);
+           //         startActivity(intent2);
+
+                    Intent intent2 = new Intent(Inicio.this, ActivityImagenes.class);
                     startActivity(intent2);
                 }
             });
