@@ -5,11 +5,13 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.example.examen.R;
+import com.example.examen.Servicio.ServicioUbicacion;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -22,7 +24,7 @@ import java.util.Map;
 
 public class pruebaMapa extends AppCompatActivity {
 
-    private FusedLocationProviderClient fusedLocationClient;
+     FusedLocationProviderClient fusedLocationClient;
     private DatabaseReference databaseReference;
 
     @Override
@@ -37,7 +39,8 @@ public class pruebaMapa extends AppCompatActivity {
         subirLatLongFirebase();
     }
 
-    private void subirLatLongFirebase() {
+    public void subirLatLongFirebase() {
+
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -55,8 +58,8 @@ public class pruebaMapa extends AppCompatActivity {
                         // Got last known location. In some rare situations this can be null.
                         if (location != null) {
 
-                            Log.e("latitud:",+location.getLatitude()+" longitud: "+location.getLongitude());
-                            System.out.println("latitud:"+location.getLatitude()+" longitud: "+location.getLongitude());
+                            Log.e("latitud:", +location.getLatitude() + " longitud: " + location.getLongitude());
+                            System.out.println("latitud:" + location.getLatitude() + " longitud: " + location.getLongitude());
 
                             Map<String, Object> latiLong = new HashMap<>();
                             latiLong.put("latitud", location.getLatitude());
@@ -64,10 +67,9 @@ public class pruebaMapa extends AppCompatActivity {
 
 
                             databaseReference.child("usuarios").push().setValue(latiLong);
-
-
+                            Toast.makeText(pruebaMapa.this, "Longitud agregada: " + location.getLatitude() + " " + location.getLongitude(), Toast.LENGTH_LONG).show();
                             // Logic to handle location object
-                        }else{
+                        } else {
                             System.out.println("nada de nada");
 
                         }

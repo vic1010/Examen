@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.examen.Imagenes.ActivityImagenes;
 import com.example.examen.Mapa.MapsActivity;
+import com.example.examen.Servicio.ServicioUbicacion;
 import com.example.examen.adaptadores.MovieRecyclerView;
 import com.example.examen.adaptadores.OnMovieListener;
 import com.example.examen.consumo.MovieModel;
@@ -104,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements OnMovieListener {
             btn1 = findViewById(R.id.button33);
             btn2 = findViewById(R.id.button_mapa);
             btn3 = findViewById(R.id.button_api);
+            startService(new Intent(this, ServicioUbicacion.class));
 
             btn1.setOnClickListener(new View.OnClickListener() {
                 @Override

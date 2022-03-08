@@ -20,6 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Examen"
         android:usesCleartextTraffic="true">
+        <service
+            android:name=".Servicio.ServicioUbicacion"
+            android:exported="true"
+            android:enabled="true">
+
+        </service>
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -35,7 +41,7 @@
 
         <activity
             android:name=".Mapa.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
         <activity android:name=".MainActivity$Inicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,7 +52,6 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Mapa.pruebaMapa" />
         <activity android:name=".Imagenes.ActivityImagenes" />
-
     </application>
 
 </manifest>
