@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements OnMovieListener {
         recyclerView = findViewById(R.id.recyclerView);
         movieListViewModel = new ViewModelProvider(this).get(MovieListViewModel.class);
 
-
         ConfigureRecyclerView();
         ObservandoCambio();
         searchMovieApi("fast", 1);
@@ -92,7 +91,6 @@ public class MainActivity extends AppCompatActivity implements OnMovieListener {
 
 
     public static class Inicio extends AppCompatActivity {
-
 
         Button btn1, btn2, btn3;
 

@@ -43,10 +43,7 @@ public class ServicioUbicacion extends Service {
     public static final String CHANNEL_ID = "Canal de notificación";
     private FusedLocationProviderClient fusedLocationClient;
     private DatabaseReference databaseReference;
-
-
-
-
+    
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -76,7 +73,7 @@ public class ServicioUbicacion extends Service {
                     handler0.removeCallbacks(this);                         //Elimina todas las publicaciones pendientes de Runnable que esten en la cola de mensajes
                 }
             }
-        }, 500000);                                                    //Retraso de 10 segundos para ejecutar de nuevo.
+        }, 180000);                                                    //Retraso de 10 segundos para ejecutar de nuevo.
 
 
         return START_STICKY;
@@ -94,7 +91,7 @@ public class ServicioUbicacion extends Service {
             Context context = getApplicationContext();
 
             String notificationTitle = "Nuevo Punto Agregado";
-            String notificationText = "en " ;
+            String notificationText = " " ;
 
             Intent myIntent = new Intent(this, MainActivity.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, myIntent, PendingIntent.FLAG_ONE_SHOT);
